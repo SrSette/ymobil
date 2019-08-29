@@ -7,7 +7,7 @@ import {
   Text,
   View,
   Image,
-  Button
+  TouchableOpacity
 } from 'react-native';
 
 const App = () => {
@@ -21,16 +21,18 @@ const App = () => {
              <Image source={require('./logo.png')} />
             </View>
             <View style={styles.header}>
-              <Button title="Home" color="#841584" /*onPress={}*//>   
-              
-              <Button title="Casas" color="#841584"/>   
-              
-              <Button title="Apertamentos" color="#841584"/>   
-              
-              <Button title="Perfil" color="#841584"/>   
-              
-              <Button title="Sair" color="#841584"/>   
-
+              <TouchableOpacity style={styles.botao} onPress={() => {}}>
+                <Text style={styles.textobotao}>Login</Text>
+              </TouchableOpacity>               
+              <TouchableOpacity style={styles.botao} onPress={() => {}}>
+                <Text style={styles.textobotao}>Gerenciar</Text>
+              </TouchableOpacity>   
+              <TouchableOpacity style={styles.botao} onPress={() => {}}>
+                <Text style={styles.textobotao}>Perfil</Text>
+              </TouchableOpacity>  
+              <TouchableOpacity style={styles.botao} onPress={() => {}}>
+                <Text style={styles.textobotao}>Sair</Text>
+              </TouchableOpacity>    
             </View>
             <View style={styles.body}>
             <View style={styles.post}>
@@ -117,6 +119,21 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between"
+
+  },
+  botao:{
+    backgroundColor: "#841584",
+    height: 18,
+    alignItems: "center",
+    paddingHorizontal: 20,
+    marginBottom: 10,
+
+  },
+  textobotao:{
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 11,
+
 
   },
   body: {
