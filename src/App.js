@@ -6,18 +6,33 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar,
+  Image,
+  Button
 } from 'react-native';
 
 const App = () => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <View style={styles.body}>
+            <View style={styles.logo}>
+             <Image source={require('./logo.png')} />
+            </View>
+            <View style={styles.header}>
+              <Button title="Home" color="#841584" /*onPress={}*//>   
+              
+              <Button title="Casas" color="#841584"/>   
+              
+              <Button title="Apertamentos" color="#841584"/>   
+              
+              <Button title="Perfil" color="#841584"/>   
+              
+              <Button title="Sair" color="#841584"/>   
+
+            </View>
+            <View style={styles.body}>
             <View style={styles.post}>
               <Text style={styles.titlepost}>
                 Titulo do Post
@@ -85,17 +100,29 @@ const App = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: "#000",
+    backgroundColor: "#20232a",
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-    backgroundColor: "#fff"
+  logo: {
+    backgroundColor: "#20232a",
+    alignItems: "center",
+    marginTop: 2,
+    marginBottom: 2,
+    marginLeft: 2,
+    marginRight: 2,
+  },
+  header:{
+    backgroundColor: "#20232a",
+    margin: 2,
+    padding: 5,
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between"
+
   },
   body: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#333",
+    backgroundColor: "#20232a",
   },
   post: {
     fontSize: 5,
@@ -103,7 +130,9 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     padding: 20,
     backgroundColor: "#fff",
-    borderRadius: 5
+    borderRadius: 0,
+    borderWidth: 2,
+    borderColor: '#841584',
   },
   titlepost:{
     fontSize: 15,
